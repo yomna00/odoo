@@ -32,5 +32,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_hms_doctors" name="Doctors" parent="menu_hms_root" action="action_hms_doctor"/>
+    <menuitem id="menu_hms_doctors"
+              name="Doctors"
+              parent="menu_hms_root"
+              action="action_hms_doctor"
+              groups="hms.group_hms_manager"/>
 </odoo>

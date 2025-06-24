@@ -9,6 +9,8 @@
                         <group>
                             <field name="first_name" required="1"/>
                             <field name="last_name" required="1"/>
+                            <field name="user_id" readonly="1"/> 
+                            <field name="email" required="1"/>
                             <field name="birth_date"/>
                             <field name="age"/>
                             <field name="state"/>
@@ -16,9 +18,9 @@
                             <field name="blood_type"/>
                         </group>
                         <group>
-                            <field name="department_id"/>
+                            <field name="department_id" domain="[('is_opened', '=', True)]"/>
                             <field name="capacity" readonly="1"/>
-                            <field name="doctor_ids" widget="many2many_tags"/>
+                            <field name="doctor_ids" widget="many2many_tags" groups="hms.group_hms_manager"/>
                             <field name="pcr"/>
                             <field name="cr_ratio"/>
                         </group>
@@ -41,6 +43,7 @@
             <tree>
                 <field name="first_name"/>
                 <field name="last_name"/>
+                <field name="user_id"/> 
                 <field name="birth_date"/>
                 <field name="age"/>
                 <field name="state"/>
